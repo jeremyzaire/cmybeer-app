@@ -1,5 +1,9 @@
 import CountDown from "../CountDown";
 
 export default function App() {
-  return <CountDown initialCount={12} />;
+  return (
+    <>
+      <CountDown initialCount={12} />;
+    </>
+  );
 }
