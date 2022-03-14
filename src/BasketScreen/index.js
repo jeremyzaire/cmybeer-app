@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
+import Screen from "../Screen";
 
 export default function BasketScreen() {
   return (
     <>
-      <h1>CMyBeer</h1>
-      <h2>BasketScreen</h2>
-      <nav>
-        <Link to="/">Retour à la page d'accueil</Link>
-      </nav>
+      <Screen
+        title="HomeScreen"
+        navigation={<Link to="/">Retour à la page d'accueil</Link>}
+      />
     </>
   );
 }

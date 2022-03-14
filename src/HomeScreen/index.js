@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
+import Screen from "../Screen";
+
+import "./styles.css";
 
 export default function HomeScreen() {
+  console.log("test plugin");
+
   return (
     <>
-      <h1>CMyBeer</h1>
-      <h2>HomeScreen</h2>
-      <nav>
-        <Link to="/basket">Voir mon panier</Link>
-      </nav>
+      <Screen
+        title="HomeScreen"
+        navigation={<Link to="/basket">Voir mon panier</Link>}
+        isHome
+      />
     </>
   );
 }
