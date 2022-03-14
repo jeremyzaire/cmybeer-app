@@ -4,8 +4,6 @@ import Screen from "../Screen";
 import "./styles.css";
 
 export default function HomeScreen() {
-  console.log("test plugin");
-
   return (
     <>
       <Screen

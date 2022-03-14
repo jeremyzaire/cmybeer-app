@@ -1,19 +1,11 @@
-import { node, string, bool } from "prop-types";
+import { bool, node, string } from "prop-types";
 
-import "./styles.css";
-import { Typography } from "@mui/material";
+import Header from "../Header";
 
-export default function Screen({ title, navigation, isHome = false }) {
-  return (
-    <>
-      <Typography variant="h1">CMyBeer</Typography>
-      <Typography variant="h2">{title}</Typography>
-      <nav>{navigation}</nav>
-    </>
-  );
+export default function Screen() {
+  return <Header />;
 }
-
-Screen.propType = {
+Screen.propTypes = {
   title: string.isRequired,
   navigation: node,
   isHome: bool,
