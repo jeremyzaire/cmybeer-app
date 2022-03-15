@@ -5,10 +5,7 @@ import Screen from "../Screen";
 import "./styles.css";
 
 export default function HomeScreen() {
-  // const beers = [{ id: 1 }, { id: 2 }, { id: 3 }];
-  const beers = new Array(20).fill(null).map((_, i) => ({
-    id: i,
-  }));
+  const beers = new Array(20).fill(null).map((_, i) => ({ id: i }));
 
   return (
     <Screen>
