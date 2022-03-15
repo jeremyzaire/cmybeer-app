@@ -1,10 +1,6 @@
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
+import { Box as MuiBox } from "@mui/material";
 
-export const Title = styled.h1`
-  color: lightcoral;
-`;
-
-export const Subtitle = styled.h2`
-  color: ${({ isHome }) => (isHome ? "lightskyblue" : "lightseagreen")};
-  text-decoration: underline;
-`;
+export const Box = styled(MuiBox)(({ theme }) => ({
+  padding: theme.spacing(4),
+}));
