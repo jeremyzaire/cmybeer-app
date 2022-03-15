@@ -2,7 +2,7 @@ import { CircularProgress, Grid } from "@mui/material";
 import React from "react";
 import Beer from "../Beer";
 import Screen from "../Screen";
-import useBeers from "../userBeers";
+import useBeers from "../hooks/userBeers";
 
 import "./styles.css";
 
