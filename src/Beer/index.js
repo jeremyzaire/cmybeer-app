@@ -4,11 +4,30 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
   Typography,
 } from "@mui/material";
 import { number } from "prop-types";
+import React from "react";
 
-export default function Beer({ id }) {
+const useQuantity = () => {
+  const [quantity, setQuantity] = React.useState(1);
+
+  const handleChange = (event) => {
+    setQuantity(event.target.value);
+  };
+
+  return [quantity, handleChange];
+};
+
+export default function Beer({ id, maxQuantity = 5 }) {
+  const [quantity, setQuantity] = useQuantity();
+
+  const items = new Array(maxQuantity).fill(null);
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -27,13 +46,29 @@ export default function Beer({ id }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <FormControl>
+          <InputLabel id="quantity-label">Quantité</InputLabel>
+          <Select
+            labelId="quantity-label"
+            value={quantity}
+            label="Quantité"
+            onChange={setQuantity}
+          >
+            {items.map((_, i) => (
+              <MenuItem key={i} value={i + 1}>
+                {`${i + 1} bouteille`}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <Button size="small">Ajouter</Button>
       </CardActions>
     </Card>
   );
 }
 
 Beer.propTypes = {
-  id: number,
+  id: number.isRequired,
+  prop: number,
 };
