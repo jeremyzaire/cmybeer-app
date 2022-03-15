@@ -2,12 +2,13 @@ import { CircularProgress, Grid } from "@mui/material";
 import React from "react";
 import Beer from "../Beer";
 import Screen from "../Screen";
-import useBeers from "../hooks/useBeers";
+import { useBeers } from "../hooks";
 
 import "./styles.css";
+import Filter from "../Filter";
 
 export default function HomeScreen() {
-  const { isLoading, error, beers } = useBeers();
+  const { isLoading, beers } = useBeers();
 
   if (isLoading)
     return (
@@ -16,13 +17,9 @@ export default function HomeScreen() {
       </Screen>
     );
 
-  if (error) {
-    console.log("Bug n°1234");
-    return "Pas de résultat. Réessayer plus tard";
-  }
-
   return (
     <Screen>
+      <Filter />
       <Grid container justifyContent="space-between" spacing={4}>
         {beers.map((beer) => (
           <Grid key={beer.id} item>

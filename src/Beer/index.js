@@ -12,19 +12,10 @@ import {
 } from "@mui/material";
 import { number, string, shape } from "prop-types";
 import React from "react";
-
-const useQuantity = () => {
-  const [quantity, setQuantity] = React.useState(1);
-
-  const handleChange = (event) => {
-    setQuantity(event.target.value);
-  };
-
-  return [quantity, handleChange];
-};
+import { useSelect } from "../hooks";
 
 export default function Beer({ beer, maxQuantity = 5 }) {
-  const [quantity, setQuantity] = useQuantity();
+  const [quantity, setQuantity] = useSelect(1);
 
   const items = new Array(maxQuantity).fill(null);
 
