@@ -10,8 +10,12 @@ import {
 import { func } from "prop-types";
 import { ShoppingBasket } from "@mui/icons-material";
 import { Link } from "./styles";
+import React from "react";
+import { BasketContext } from "../contexts";
 
 export default function Header({ onToggleBasket = Function.prototype }) {
+  const value = BasketContext.useContext();
+
   const mainNavigation = [
     { path: "/", name: "Les bières" },
     { path: "/countdown", name: "Countdown" },

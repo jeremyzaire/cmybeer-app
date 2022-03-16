@@ -7,7 +7,9 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
-import BasketItemPrice, { types as basketItemPrice } from "../BasketItemPrice";
+import BasketItemPrice, {
+  types as basketItemPriceTypes,
+} from "../BasketItemPrice";
 
 export default function BasketItem({
   name,

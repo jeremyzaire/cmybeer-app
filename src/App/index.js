@@ -8,12 +8,14 @@ import BeerScreen from "../BeerScreen";
 import theme from "./theme";
 import CountdownScreen from "../CountdownScreen";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { BasketContext } from "../contexts";
 
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <BasketContext.Provider value={{}} />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
