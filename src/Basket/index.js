@@ -7,7 +7,7 @@ import Price from "../Price";
 import { BasketContext } from "../contexts";
 
 export default function Basket({ open = false, toggle = Function.prototype }) {
-  const { basketItemsTotalAmount, basketItems } = BasketContext.useContext();
+  const { basketItems, totalPrice } = BasketContext.useContext();
 
   return (
     <Drawer anchor="right" open={open} onClose={toggle}>
@@ -29,7 +29,7 @@ export default function Basket({ open = false, toggle = Function.prototype }) {
         </Typography>
 
         <Typography variant="h5" component="h6">
-          <Price value={basketItemsTotalAmount} />
+          <Price value={totalPrice} />
         </Typography>
       </Total>
     </Drawer>

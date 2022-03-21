@@ -14,7 +14,7 @@ import React from "react";
 import { BasketContext } from "../contexts";
 
 export default function Header({ onToggleBasket = Function.prototype }) {
-  const value = BasketContext.useContext();
+  const { basketItemsCount } = BasketContext.useContext();
 
   const mainNavigation = [
     { path: "/", name: "Les bières" },
@@ -42,7 +42,7 @@ export default function Header({ onToggleBasket = Function.prototype }) {
             color="inherit"
             onClick={onToggleBasket}
           >
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={basketItemsCount} color="error">
               <ShoppingBasket />
             </Badge>
           </IconButton>

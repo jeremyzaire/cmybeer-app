@@ -1,5 +1,5 @@
 import { Image } from "@mui/icons-material";
-import { string, number } from "prop-types";
+import { string } from "prop-types";
 import {
   Avatar,
   Divider,
@@ -18,12 +18,6 @@ export default function BasketItem({
   quantity,
   divider = true,
 }) {
-  const basketItemPrice = () => (
-    <>
-      <strong>{price}</strong> x{quantity}
-    </>
-  );
-
   return (
     <>
       <ListItem>
@@ -32,7 +26,7 @@ export default function BasketItem({
             <Image />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={name} secondary={basketItemPrice} />
+        <ListItemText primary={name} secondary={BasketItemPrice} />
       </ListItem>
       {divider && <Divider variant="inset" component="li" />}
     </>
