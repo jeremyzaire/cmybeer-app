@@ -63,6 +63,7 @@
     "git-cz": "^4.8.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.5",
+    "msw": "^0.39.2",
     "prettier": "^2.5.1",
     "prettier-plugin-packagejson": "^2.2.16"
   }
