@@ -9,8 +9,9 @@ import {
 } from "@mui/material";
 import { func } from "prop-types";
 import { ShoppingBasket } from "@mui/icons-material";
-import { Link } from "./styles";
 import React from "react";
+
+import { Link } from "./styles";
 import { BasketContext } from "../contexts";
 
 export default function Header({ onToggleBasket = Function.prototype }) {

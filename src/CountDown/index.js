@@ -8,7 +8,9 @@ export default function CountDown({ initialCount = 100, step = 1 }) {
 
   return (
     <>
-      <p className="countdown-number">{count}</p>
+      <p role="timer" aria-live="polite" className="countdown-number">
+        {count}
+      </p>
       <button className="countdown-button" onClick={decrement}>
         CountDown
       </button>
