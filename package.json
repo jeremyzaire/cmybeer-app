@@ -6,7 +6,6 @@
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "commit": "git-cz",
-    "eject": "react-scripts eject",
     "format": "prettier --write **/*.{css,html,js,jsx,json,md}",
     "prepare": "husky install",
     "start": "react-scripts start",
