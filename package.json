@@ -9,7 +9,7 @@
     "format": "prettier --write **/*.{css,html,js,jsx,json,md}",
     "prepare": "husky install",
     "start": "react-scripts start",
-    "start-api": "json-server --watch db.json --port 3001",
+    "start:api": "json-server --watch db.json --port 3001",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "react-scripts test"
   },
