@@ -1,5 +1,4 @@
-import { Image } from "@mui/icons-material";
-import { string } from "prop-types";
+import { bool, string } from "prop-types";
 import {
   Avatar,
   Divider,
@@ -7,6 +6,7 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
+
 import BasketItemPrice, {
   types as basketItemPriceTypes,
 } from "../BasketItemPrice";
@@ -22,11 +22,12 @@ export default function BasketItem({
     <>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src={imageUri} alt={name}>
-            <Image />
-          </Avatar>
+          <Avatar src={imageUri} alt={name} />
         </ListItemAvatar>
-        <ListItemText primary={name} secondary={BasketItemPrice} />
+        <ListItemText
+          primary={name}
+          secondary={<BasketItemPrice price={price} quantity={quantity} />}
+        />
       </ListItem>
       {divider && <Divider variant="inset" component="li" />}
     </>
@@ -35,6 +36,6 @@ export default function BasketItem({
 
 BasketItem.propTypes = {
   name: string,
-  divider: Boolean,
+  divider: bool,
   ...basketItemPriceTypes,
 };

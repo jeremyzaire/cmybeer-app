@@ -1,8 +1,9 @@
 import { bool, func } from "prop-types";
 import { Drawer, Typography } from "@mui/material";
+import React from "react";
+
 import { List, Title, Total } from "./styles";
 import BasketItem from "../BasketItem";
-import React from "react";
 import Price from "../Price";
 import { BasketContext } from "../contexts";
 
@@ -11,7 +12,7 @@ export default function Basket({ open = false, toggle = Function.prototype }) {
 
   return (
     <Drawer anchor="right" open={open} onClose={toggle}>
-      <Title variant="h4" components="h6">
+      <Title variant="h4" component="h6">
         Mon panier
       </Title>
       <List>
@@ -27,7 +28,6 @@ export default function Basket({ open = false, toggle = Function.prototype }) {
         <Typography variant="h5" component="h6">
           Total
         </Typography>
-
         <Typography variant="h5" component="h6">
           <Price value={totalPrice} />
         </Typography>

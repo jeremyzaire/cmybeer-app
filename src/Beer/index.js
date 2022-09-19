@@ -1,24 +1,31 @@
+import { func, number, shape, string } from "prop-types";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  Button,
+  Typography,
   FormControl,
   InputLabel,
-  MenuItem,
   Select,
-  Typography,
+  MenuItem,
 } from "@mui/material";
-import { number, string, shape } from "prop-types";
 import React from "react";
-import { BasketContext } from "../contexts";
+
 import { useSelect } from "../hooks";
 
-export default function Beer({ beer, maxQuantity = 5 }) {
-  const { addToBasket } = BasketContext.useContext();
+export default function Beer({
+  beer,
+  maxQuantity = 5,
+  onAddToBasket = Function.prototype,
+}) {
   const [quantity, setQuantity] = useSelect(1);
+
   const items = new Array(maxQuantity).fill(null);
+
+  if (!beer) return null;
+
   const { id, name, description, imageUri } = beer;
 
   return (
@@ -33,23 +40,24 @@ export default function Beer({ beer, maxQuantity = 5 }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <FormControl>
+        <FormControl variant="standard">
           <InputLabel id="quantity-label">Quantité</InputLabel>
           <Select
             labelId="quantity-label"
             value={quantity}
             label="Quantité"
             onChange={setQuantity}
+            size="small"
           >
-            {items.map((_, i) => (
-              <MenuItem key={i} value={i + 1}>
-                {`${i + 1} bouteille`}
-              </MenuItem>
-            ))}
+            {items.map((_, index) => {
+              const i = index + 1;
+              return (
+                <MenuItem key={i} value={i}>{`${i} bouteille(s)`}</MenuItem>
+              );
+            })}
           </Select>
         </FormControl>
-
-        <Button size="small" onClick={addToBasket(id, quantity)}>
+        <Button size="small" onClick={() => onAddToBasket(id, quantity)}>
           Ajouter
         </Button>
       </CardActions>
@@ -66,4 +74,5 @@ Beer.propTypes = {
     price: string,
   }),
   maxQuantity: number,
+  onAddToBasket: func,
 };

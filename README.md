@@ -1,4 +1,4 @@
-# C My Beer App
+# C My Beer
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -28,6 +28,30 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Testing
+
+- Comment tester ?
+
+  qsdfqsdf
+
+- Quelle est notre stratégie ?
+
+  dfqsfqsdf
+
+- Comment [`render`](./testUtils/render/index.js) nos composants ?
+
+  Voilà, pourquoi on s'en sert, etc
+
+## Stories in Storybook
+
+- Where?
+
+  http://test.storybook-cmybeer.com
+
+- How?
+
+  We use some default decorators. See [`preview.js`](.storybook/preview.js) for more info.
 
 ## Learn More
 

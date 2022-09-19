@@ -1,7 +1,8 @@
-import { string, number } from "prop-types";
+import { number, string } from "prop-types";
+
 import Price from "../Price";
 
-export default function BasketItemPrice(price, quantity) {
+export default function BasketItemPrice({ price, quantity }) {
   return (
     <>
       <strong>
