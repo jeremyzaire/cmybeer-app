@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
-import CMyBeersFetch from "../../CMyBeers";
+import cMyBeersFetch from "../../cMyBeersFetch";
 
 export default function useCategories() {
   const { isLoading, error, data } = useQuery(
     "categories",
-    CMyBeersFetch("/categories")
+    cMyBeersFetch("/categories")
   );
 
   return { isLoading, error, categories: data };

@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import CMyBeersFetch from "../../CMyBeers";
+import cMyBeersFetch from "../../cMyBeersFetch";
 import queryString from "query-string";
 import { Category } from "@mui/icons-material";
 
@@ -14,7 +14,7 @@ export default function useBeers({ categoryId } = {}) {
 
   const { isLoading, error, data } = useQuery(
     ["beers", categoryId],
-    CMyBeersFetch(beersUrl)
+    cMyBeersFetch(beersUrl)
   );
 
   return { isLoading, error, beers: data };
