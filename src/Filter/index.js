@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useCategories } from "../hooks/";
+import { useCategories } from "../hooks";
 import { string, func } from "prop-types";
 
 export default function Filter({ category, setCategory }) {

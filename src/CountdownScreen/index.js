@@ -4,7 +4,7 @@ import Screen from "../Screen";
 export default function CountdownScreen() {
   return (
     <Screen>
-      <Countdown />;
+      <Countdown />
     </Screen>
   );
 }

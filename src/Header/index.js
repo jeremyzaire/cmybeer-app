@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { func } from "prop-types";
 import { ShoppingBasket } from "@mui/icons-material";
-import React from "react";
 
 import { Link } from "./styles";
 import { BasketContext } from "../contexts";
