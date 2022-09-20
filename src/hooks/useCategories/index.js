@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+
 import cMyBeersFetch from "../../cMyBeersFetch";
 
 export default function useCategories() {

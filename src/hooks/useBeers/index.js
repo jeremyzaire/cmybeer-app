@@ -1,19 +1,19 @@
 import { useQuery } from "react-query";
-import cMyBeersFetch from "../../cMyBeersFetch";
 import queryString from "query-string";
-import { Category } from "@mui/icons-material";
+
+import cMyBeersFetch from "../../cMyBeersFetch";
 
 export default function useBeers({ categoryId } = {}) {
-  const cleanCategory =
-    Category === "0" || categoryId === "0" ? undefined : categoryId;
+  const cleanCategoryId =
+    categoryId === "" || categoryId === "0" ? undefined : categoryId;
 
   const beersUrl = queryString.stringifyUrl({
     url: "/beers",
-    query: { categoryId: cleanCategory },
+    query: { categoryId: cleanCategoryId },
   });
 
   const { isLoading, error, data } = useQuery(
-    ["beers", categoryId],
+    ["beers", cleanCategoryId],
     cMyBeersFetch(beersUrl)
   );
 
