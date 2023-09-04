@@ -1,4 +1,4 @@
-import Countdown from "../Countdown";
+import Countdown from "../CountDown";
 import Screen from "../Screen";
 
 export default function CountdownScreen() {
